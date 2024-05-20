@@ -1,0 +1,13 @@
+[
+	{
+		"$schema": "http://json-schema.org/draft-04/schema#",
+		"rama": [
+			{
+				"venga": "aqui empieza todo"
+
+			},
+            {"venga": "otro ejemplo"}
+            ,{"venga": "otro ejemplo"}
+		]
+	}
+]
