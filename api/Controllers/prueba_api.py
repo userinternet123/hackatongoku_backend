@@ -8,6 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from flask import jsonify
 from api.models import db, TPrueba
 from api.Utilities.queries.query import get_query
+from flask_jwt_extended import jwt_required
 
 #dbPrueba="mssql+pyodbc://usrUnisis25:usrUnisis25@unisis25/prueba?driver=SQL+Server+Native+Client+11.0"
 
@@ -18,6 +19,7 @@ print(os.getenv('dbPrueba'))
 #session = Session()
 
 class PruebaApiController(Resource):
+    @jwt_required()
     def get(self, id=None):
         try:
             ##return {'message': 'success'}, 200

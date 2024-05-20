@@ -6,7 +6,8 @@ from flask_restful import Api
 from api import Controllers as c
 from api.models import db
 from os.path import dirname, join
-#from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, jwt_required
+
 ENV = 'desa'
 dotenv_path = ''
 app = Flask(
@@ -38,6 +39,10 @@ app.config["DEBUG"] = True #if ENV == 'local' else False
 db.init_app(app)
 api = Api(app)
 
+app.config["JWT_SECRET_KEY"] = os.getenv('JWT_KEY')
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = 86400
+jwt = JWTManager(app)
+
 #app.config["JWT_SECRET_KEY"] = os.getenv('JWT_KEY')
 #app.config["JWT_ACCESS_TOKEN_EXPIRES"] = 86400
     #jwt = JWTManager(app)
@@ -50,6 +55,8 @@ def home():
 
 api.add_resource(c.PruebaApiController,
                  '/api/prueba/<int:id>','/api/prueba')
+api.add_resource(c.AuthController, '/api/auth')
+api.add_resource(c.userApiController, '/api/user/<int:id>','/api/user')
 
 
 
