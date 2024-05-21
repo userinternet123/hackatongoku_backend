@@ -1,0 +1,151 @@
+[
+    {
+        "luchador": "Hulk Hogan",
+        "password":"contraseña",
+        "email":"hogan@.goku.com",
+        "imagen":"https://www.google.com",
+        "ki": 66.66,
+        "esferas": 3,
+        "categoria":[
+            {
+                "Base de Datos":[
+                    {
+                    "Motor":"SQL",
+                    "requerimiento":[
+                            {"query":"SELECT * FROM tabla1","nota": 30},
+                            {"query":"SELECT * FROM tabla2","nota": 20}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "backend":[
+                    {
+                    "Lenguaje":"Python",
+                    "requerimiento":[
+                            {"codigo":"print('Hola Mundo')","nota": 30},
+                            {"codigo":"print('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "frontend":[
+                    {
+                    "Lenguaje":"react",
+                    "requerimiento":[
+                            {"codigo":"console.log('Hola Mundo')","nota": 40},
+                            {"codigo":"console.log('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            }
+          ]
+    },
+    {
+        "luchador": "The Rock",
+        "password":"contraseña",
+        "email":"hogan@.goku.com",
+        "imagen":"https://www.google.com",
+        "ki": 66.66,
+        "esferas": 3,
+        "categoria":[
+            {
+                "Base de Datos":[
+                    {
+                    "Motor":"SQL",
+                    "requerimiento":[
+                            {"query":"SELECT * FROM tabla1","nota": 30},
+                            {"query":"SELECT * FROM tabla2","nota": 20}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "backend":[
+                    {
+                    "Lenguaje":"Python",
+                    "requerimiento":[
+                            {"codigo":"print('Hola Mundo')","nota": 30},
+                            {"codigo":"print('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "frontend":[
+                    {
+                    "Lenguaje":"react",
+                    "requerimiento":[
+                            {"codigo":"console.log('Hola Mundo')","nota": 40},
+                            {"codigo":"console.log('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            }
+          ]
+    },
+    {
+        "luchador": "John Cena",
+        "password":"contraseña",
+        "email":"hogan@.goku.com",
+        "imagen":"https://www.google.com",
+        "ki": 66.66,
+        "esferas": 3,
+        "categoria":[
+            {
+                "Base de Datos":[
+                    {
+                    "Motor":"SQL",
+                    "requerimiento":[
+                            {"query":"SELECT * FROM tabla1","nota": 30},
+                            {"query":"SELECT * FROM tabla2","nota": 20}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "backend":[
+                    {
+                    "Lenguaje":"Python",
+                    "requerimiento":[
+                            {"codigo":"print('Hola Mundo')","nota": 30},
+                            {"codigo":"print('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            },
+            {
+                "frontend":[
+                    {
+                    "Lenguaje":"react",
+                    "requerimiento":[
+                            {"codigo":"console.log('Hola Mundo')","nota": 40},
+                            {"codigo":"console.log('Hola Mundo')","nota": 40}
+                        ]
+                    }
+            
+                ]
+                
+            }
+          ]
+    }
+]
+
+        

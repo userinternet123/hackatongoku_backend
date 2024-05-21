@@ -7,10 +7,16 @@ class TUser(db.Model):
     username = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
-    def __init__(self, name, email, password):
+    imagen = db.Column(db.String(255), nullable=True)
+    Eliminado = db.Column(db.Boolean, nullable=False, default=False)
+    Activo = db.Column(db.Boolean, nullable=False, default=True)
+    def __init__(self, name, email, password, imagen=None, Eliminado=False, Activo=True):
         self.username = name
         self.email = email
         self.password = generate_password_hash(password)
+        self.imagen = imagen
+        self.Eliminado = Eliminado
+        self.Activo = Activo
         #self.password = password
     def __repr__(self):
         return '<TUser %r>' % self.id
