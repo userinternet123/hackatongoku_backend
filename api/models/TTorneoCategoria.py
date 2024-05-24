@@ -2,12 +2,14 @@ from . import db
 
 class TTorneoCategoria(db.Model):
     __tablename__ = 'TTorneoCategoria'
-    __table_args__ = {'extend_existing': True}
+    #__table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     torneoId = db.Column(db.Integer, db.ForeignKey('TTorneo.id'), nullable=False)
     categoriaId = db.Column(db.Integer, db.ForeignKey('TCategoria.id'), nullable=False)
     Eliminado = db.Column(db.Boolean, default=False)
     Activo = db.Column(db.Boolean, default=True)
+    #torneo = db.relationship('TTorneo', backref='torneoCategoria', lazy=True)
+    categoria = db.relationship('TCategoria', backref='torneoCategoriaCategoria', lazy=True)
     
     def __init__(self, torneoId, categoriaId, Eliminado=False, Activo=True):
         self.torneoId = torneoId

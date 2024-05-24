@@ -6,6 +6,9 @@ class TCategoria(db.Model):
     nombre = db.Column(db.String(255), nullable=False)
     Eliminado = db.Column(db.Boolean, nullable=False, default=False)
     Activo = db.Column(db.Boolean, nullable=False, default=True)
+    #torneoCategoria = db.relationship('TTorneoCategoria', backref='categoria', lazy=True)
+    categoriaRequerimiento = db.relationship('TCategoriaRequerimiento', backref='categoriaCategoriaRequerimiento', lazy=True)
+    
     def __init__(self, nombre, Eliminado=False, Activo=True):
         self.nombre = nombre
         self.Eliminado = Eliminado

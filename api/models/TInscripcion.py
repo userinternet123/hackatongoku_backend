@@ -1,17 +1,20 @@
 from . import db
 
 class TInscripcion(db.Model):
-    __tablename__ = 't_inscripcion'
-    __table_args__ = {'extend_existing': True}
+    __tablename__ = 'TInscripcion'
+    #__table_args__ = {'extend_existing': True}
     '''Este argumento se usa para indicar que si la tabla ya existe en la base de datos, SQLAlchemy debe extender la definición existente de la tabla con cualquier cambio adicional especificado en el modelo. Esto es útil durante el desarrollo cuando estás modificando el esquema de una tabla sin querer eliminar y recrear la tabla completa. Permite que los cambios en el modelo (como agregar nuevas columnas) se apliquen a la tabla existente sin perder los datos existentes.'''
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     luchadorId = db.Column(db.Integer, db.ForeignKey('TUser.id'), nullable=False)
     torneoId = db.Column(db.Integer, db.ForeignKey('TTorneo.id'), nullable=False)
-    ki = db.Column(db.double, nullable=False)
+    ki = db.Column(db.Double, nullable=False)
     esferas = db.Column(db.Integer, nullable=False)
     Eliminado = db.Column(db.Boolean, default=False)
     Activo = db.Column(db.Boolean, default=True)
+    luchador = db.relationship('TUser', backref='inscripcionLuchador', lazy=True)
+    torneo = db.relationship('TTorneo', backref='inscripcionTorneo', lazy=True)
+    
     def __init__(self, luchadorId, torneoId, ki, esferas, Eliminado=False, Activo=True):
         self.luchadorId = luchadorId 
         self.torneoId = torneoId 

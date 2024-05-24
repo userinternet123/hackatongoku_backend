@@ -57,6 +57,12 @@ api.add_resource(c.PruebaApiController,
                  '/api/prueba/<int:id>','/api/prueba')
 api.add_resource(c.AuthController, '/api/auth')
 api.add_resource(c.userApiController, '/api/user/<int:id>','/api/user')
+api.add_resource(c.CategoriaController, '/api/categoria/<int:id>','/api/categoria')
+api.add_resource(c.notaRequrimientoController, '/api/notaRequerimiento/<int:id>','/api/notaRequerimiento')
+api.add_resource(c.requerimientoController, '/api/requerimiento/<int:id>','/api/requerimiento')
+api.add_resource(c.torneoController, '/api/torneo/<int:id>','/api/torneo')
+api.add_resource(c.inscripcionController, '/api/inscripcion/<int:id>','/api/inscripcion')
+
 
 
 

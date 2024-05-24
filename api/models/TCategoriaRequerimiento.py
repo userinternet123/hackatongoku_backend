@@ -7,6 +7,7 @@ class TCategoriaRequerimiento(db.Model):
     Activo = db.Column(db.Boolean, default=True)
     categoriaId = db.Column(db.Integer, db.ForeignKey('TCategoria.id'), nullable=False)
     requerimientoId = db.Column(db.Integer, db.ForeignKey('TRequerimiento.id'), nullable=False)
+    requerimiento = db.relationship('TRequerimiento', backref='categoriaRequerimientoRequerimiento', lazy=True)
     def __init__(self, categoriaId, requerimientoId, Eliminado=False, Activo=True):
         self.categoriaId = categoriaId 
         self.requerimientoId = requerimientoId 

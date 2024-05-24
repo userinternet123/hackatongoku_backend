@@ -10,8 +10,8 @@
 --DROP TABLE IF EXISTS Requerimiento;
 --drop table if exists TluchadorTorneo;
 --drop table if exists TPrueba;
-
-
+select * from TUser
+select * from TCategoria
 
 
 CREATE TABLE TUser (
@@ -167,6 +167,10 @@ VALUES
 (2, 2, 68.00, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2024
 (3, 1, 66.66, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- John Cena en 2023
 (3, 2, 67.00, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1); -- John Cena en 2024
+INSERT INTO TInscripcion (luchadorId, torneoId, ki, esferas, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
+VALUES 
+(4, 2, 80.00, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- John Cena en 2024
+(5, 2, 85.00, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1); -- John Cena en 2024
 
 -- Relacionar Torneos con Categorías
 INSERT INTO TTorneoCategoria (torneoId, categoriaId, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
@@ -196,5 +200,21 @@ VALUES
 (1, 2, 1, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Base de Datos, SELECT * FROM tabla1
 (2, 2, 1, 20.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Base de Datos, SELECT * FROM tabla2
 (3, 2, 1, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Backend, print(''Hola Mundo'')
-(4, 2, 1, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Frontend, console.log(''Hola Mundo'')
-(1, 3, 1, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- John Cena en 2023, Base de
+(4, 2, 1, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1); -- The Rock en 2023, Frontend, console.log(''Hola Mundo'')
+INSERT INTO TNotaRequerimiento (requerimientoId, luchadorId, torneoId, nota, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
+VALUES 
+(1, 4, 2, 50.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Base de Datos, SELECT * FROM tabla1
+(2, 4, 2, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Base de Datos, SELECT * FROM tabla2
+(3, 4, 2, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Backend, print(''Hola Mundo'')
+(4, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Frontend, console.log(''Hola Mundo'')
+(1, 5, 2, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Base de Datos, SELECT * FROM tabla1
+(2, 5, 2, 50.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Base de Datos, SELECT * FROM tabla2
+(3, 5, 2, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Backend, print(''Hola Mundo'')
+(4, 5, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1) -- Hulk Hogan en 2023, Frontend, console.log(''Hola Mundo'')
+
+
+SELECT t_inscripcion.id AS t_inscripcion_id, t_inscripcion.[luchadorId] AS [t_inscripcion_luchadorId], t_inscripcion.[torneoId] AS [t_inscripcion_torneoId], t_inscripcion.ki AS t_inscripcion_ki, t_inscripcion.esferas AS t_inscripcion_esferas, t_inscripcion.[Eliminado] AS [t_inscripcion_Eliminado], t_inscripcion.[Activo] AS [t_inscripcion_Activo] \nFROM t_inscripcion JOIN [TTorneo] ON [TTorneo].id = t_inscripcion.[torneoId] JOIN [TUser] ON [TUser].id = t_inscripcion.[luchadorId] \nWHERE [TTorneo].id = ?]\n[parameters:
+
+
+SELECT t_inscripcion.id AS t_inscripcion_id, t_inscripcion.[luchadorId] AS [t_inscripcion_luchadorId], t_inscripcion.[torneoId] AS [t_inscripcion_torneoId], t_inscripcion.ki AS t_inscripcion_ki, t_inscripcion.esferas AS t_inscripcion_esferas, t_inscripcion.[Eliminado] AS [t_inscripcion_Eliminado], t_inscripcion.[Activo] AS [t_inscripcion_Activo] 
+FROM t_inscripcion JOIN [TTorneo] ON [TTorneo].id = t_inscripcion.[torneoId]

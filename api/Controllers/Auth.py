@@ -7,9 +7,9 @@ class AuthController(Resource):
     
     def post(self):
         print('ingresa a post Auth')
-        username = request.json.get("username", None)
+        username = request.json.get("userName", None)
         password = request.json.get("password", None)
-        user = TUser.query.filter_by(username=username).first()
+        user = TUser.query.filter_by(userName=username).first()
         if user is None or not user.check_password(password):
             return {"msg": "Bad username or password"}, 401
         access_token = create_access_token(identity=user.id)
