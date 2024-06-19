@@ -140,10 +140,21 @@ VALUES
 -- Insertar Requerimientos
 INSERT INTO TRequerimiento (descripcion, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
 VALUES 
-('SELECT * FROM tabla1', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
-('SELECT * FROM tabla2', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
-('print(''Hola Mundo'') - Python', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
-('console.log(''Hola Mundo'') - React', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
+('Escribe una consulta que devuelva el conteo de personajes por raza y género. (Valor: 15)', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('Escribe una consulta en la que debes crear una variable tipo tabla o tabla temporal, esta debe ser una copia de la tabla TPersonajes', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('Escribe una consulta que devuelva la brecha que hay entre Ki y maxKi de cada personaje y ordena el resultado ascendentemente por esta brecha', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('Escribe una consulta que retorne el personaje más poderoso por cada raza ', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('Escribe una consulta que retorne al dios más débil', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('Escribe una consulta que muestre el nombre de cada personaje y su nombre inverso', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
+
+
+update TRequerimiento set descripcion='Creación de tablas de proyecto' where id = 1
+update TRequerimiento set descripcion='Base de datos Relacionada' where id = 2
+update TRequerimiento set descripcion='Creación de tablas de proyecto' where id = 3
+update TRequerimiento set descripcion='Creación de tablas de proyecto' where id = 4
+select * from TRequerimiento
+
+
 
 -- Insertar Torneos
 INSERT INTO TTorneo (anio, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
@@ -156,7 +167,8 @@ INSERT INTO TUser (username, email, password, imagen, usuarioInserto, fechaInser
 VALUES 
 ('Hulk Hogan', 'hogan@.goku.com', 'hogan', 'https://www.google.com', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
 ('The Rock', 'rock@.goku.com', 'rock', 'https://www.google.com', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
-('John Cena', 'cena@.goku.com', 'cena', 'https://www.google.com', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
+('John Cena', 'cena@.goku.com', 'cena', 'https://www.google.com', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+('goku', 'userinternet123@gmail.com', 'scrypt:32768:8:1$iOuw2GkctmFjsPJk$460fd50612fe85fd63f227675b418189e844d6f321575ba373ab44020c1889e1f606e7c804656ab85274b9d39e5fe6220f17fbbe2798bb8fd8d34f4e2eb9b565', 'https://dragonball-api.com/characters/goku_normal.webp', 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
 
 -- Insertar Inscripciones de Luchadores en Torneos
 INSERT INTO TInscripcion (luchadorId, torneoId, ki, esferas, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
@@ -189,7 +201,16 @@ VALUES
 (1, 2, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- SELECT * FROM tabla2 en Base de Datos
 (2, 3, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- print(''Hola Mundo'') en Backend
 (3, 4, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1); -- console.log(''Hola Mundo'') en Frontend
+INSERT INTO TCategoriaRequerimiento (categoriaId, requerimientoId, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
+VALUES 
+(1, 5, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(1, 6, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(1, 7, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(1, 8, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(1, 9, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(1, 10, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
 
+select * from TUser
 -- Insertar Notas de Requerimientos por Luchador y Torneo
 INSERT INTO TNotaRequerimiento (requerimientoId, luchadorId, torneoId, nota, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
 VALUES 
@@ -201,6 +222,15 @@ VALUES
 (2, 2, 1, 20.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Base de Datos, SELECT * FROM tabla2
 (3, 2, 1, 30.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- The Rock en 2023, Backend, print(''Hola Mundo'')
 (4, 2, 1, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1); -- The Rock en 2023, Frontend, console.log(''Hola Mundo'')
+INSERT INTO TNotaRequerimiento (requerimientoId, luchadorId, torneoId, nota, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
+VALUES 
+(5, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(6, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(7, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(8, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(9, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1),
+(10, 4, 2, 40.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1);
+
 INSERT INTO TNotaRequerimiento (requerimientoId, luchadorId, torneoId, nota, usuarioInserto, fechaInserto, usuarioModifico, fechaModifico, Eliminado, Activo) 
 VALUES 
 (1, 4, 2, 50.00, 'admin', GETDATE(), 'admin', GETDATE(), 0, 1), -- Hulk Hogan en 2023, Base de Datos, SELECT * FROM tabla1
